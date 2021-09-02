@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #name{
+            background-color:white;
+        }
+        #surname{
+            background-color:white;
+        }
+    </style>
+</head>
+<body>
+    <h1>form event</h1>
+
+    <form  id="regform">
+        <input type="text" id="name">
+        <input type="text" id="surname">
+    <select id="color">
+        <option>red</option>
+        <option>blue</option>
+        <option>green</option>
+        <option>red</option>
+    <div id="name">
+
+    </div>
+
+    </select>
+    <button type="submit">submit</button>
+    </form>
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+    </script>
+    <script>
+        // $(document).ready(function(){
+        // $('#name','#surname').focus(function(){
+        //     $('#name','#surname').css("background-color","red");
+
+        // });
+
+        // $('#name','#surname').blur(function(){
+        //     $('#name','#surname').css("background-color","green");
+
+        // });
+   
+        // });
+        $(document).ready(function(){
+            $('#name').focus(function(){
+               $(this).css("background-color","red");
+            });
+            $('#name').blur(function(){
+               $(this).css("background-color","red");
+            });
+            $('#name').select(function(){
+               $(this).css("background-color","green");
+            });
+            // $('#color').change(function(){
+            //     $("#name").val($(this).val());
+            //    $(this).css("background-color","green");
+            // });
+            $('#color').change(function(){
+                $("#name").html($(this).val());
+               $(this).css("background-color","green");
+            });
+
+            $('#regform').submit(function(){
+               alert("data submit");
+            });
+
+
+        });
+    </script>
+     
+</body>
+</html>
